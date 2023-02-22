@@ -35,11 +35,11 @@
 Авторизированному пользователю необходимо получить токен для полного функционала запросов, для этого нужно сделать POST запрос к эндпоинту /api/v1/jwt/create/ и передать username и password пользователя. При отправке запроса необходимо передать свой токен в заголовок Authorization: Bearer <ваш токен>
 
 
-get запрос к api/v1/posts/
+GET запрос к api/v1/posts/
 
 **Пример ответа:**
-
->{
+```json
+{
   "count": 123,
   "next": "http://api.example.org/accounts/?offset=400&limit=100",
   "previous": "http://api.example.org/accounts/?offset=200&limit=100",
@@ -54,18 +54,18 @@ get запрос к api/v1/posts/
     }
   ]
 }
-
-post запрос к api/v1/posts/
-
->{
+```
+POST запрос к api/v1/posts/
+```json
+{
   "text": "string",
   "image": "string",
   "group": 0
 }
-
+```
 Пример ответа:
-
->{
+```json
+{
   "id": 0,
   "author": "string",
   "text": "string",
@@ -73,12 +73,16 @@ post запрос к api/v1/posts/
   "image": "string",
   "group": 0
 }
-
-Доступные эндпоинты:
+```
+Доступные для запроса эндпоинты:
 
 >/api/v1/posts/ (GET, POST, PUT, PATCH, DELETE)
-/api/v1/posts/{post_id}/comments/ (GET, POST, PUT, PATCH, DELETE)
-/api/v1/groups/ (GET)
-/api/v1/follow/ (GET, POST)
-api/v1/jwt/create/ (POST)
+
+>/api/v1/posts/{post_id}/comments/ (GET, POST, PUT, PATCH, DELETE)
+
+>/api/v1/groups/ (GET)
+
+>/api/v1/follow/ (GET, POST)
+
+>api/v1/jwt/create/ (POST)
 
